@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export function Marquee() {
-  const items = ["Sapphire", "Titanium grade 5", "9-day cell", "128 Hz biometrics", "DLC coating", "Sub-vocal AI", "2.4 mm profile", "IP68"];
+  const items = ["Apple Watch", "Oura Ring", "Garmin", "Fitbit", "Whoop", "HRV", "Resting HR", "SpO₂", "Sleep stages", "Skin temp", "VO₂ max", "Recovery"];
   return (
     <div className="marquee-mask overflow-hidden border-y border-border bg-background py-6">
       <motion.div

@@ -22,22 +22,23 @@ export function SoundViz() {
   }, [cursorX, cursorY]);
 
   return (
-    <section id="sound" className="relative overflow-hidden border-y border-border bg-surface py-32 md:py-48">
+    <section id="signal" className="relative overflow-hidden border-y border-border bg-surface py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-              02 — Sound, listened to
+              02 — Signal, learned
             </p>
             <h2 className="mt-6 font-display display-tight text-5xl font-light md:text-7xl">
-              It hears you
+              It learns you
               <br />
-              <span className="italic text-muted-foreground">before you speak.</span>
+              <span className="italic text-muted-foreground">before it speaks.</span>
             </h2>
           </div>
           <p className="max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-            A four-microphone array captures sub-vocal cues — heart rhythm,
-            breath, micro-expressions. Move your cursor across the field.
+            Forty-two continuous biometric streams from your wearable, folded
+            into a single living baseline. Move across the field — this is
+            what your body looks like to PAS AI.
           </p>
         </div>
 
@@ -55,13 +56,13 @@ export function SoundViz() {
           </div>
 
           <div className="pointer-events-none absolute left-6 top-6 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            <div>Live signal · 48 kHz</div>
-            <div className="mt-1 text-amber">{active ? "● capturing" : "○ idle"}</div>
+            <div>Live baseline · 1 Hz</div>
+            <div className="mt-1 text-amber">{active ? "● learning" : "○ idle"}</div>
           </div>
 
           <div className="pointer-events-none absolute right-6 top-6 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-            <div className="text-right">04 channels</div>
-            <div className="mt-1 text-right">−42 dB noise floor</div>
+            <div className="text-right">42 channels</div>
+            <div className="mt-1 text-right">σ-tuned to you</div>
           </div>
         </div>
       </div>
