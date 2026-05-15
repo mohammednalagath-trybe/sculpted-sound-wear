@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
-import ringImg from "@/assets/ring-hero.jpg";
+import phoneImg from "@/assets/phone-hero.jpg";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -37,14 +37,14 @@ export function Hero() {
           style={{ background: "var(--gradient-glow)" }} />
       </motion.div>
 
-      {/* Ring */}
+      {/* Phone */}
       <motion.div
         style={{ scale, y: yImg, opacity, rotateX: rx, rotateY: ry, transformPerspective: 1200 }}
         className="absolute inset-0 flex items-center justify-center"
       >
         <img
-          src={ringImg}
-          alt="Aurea ring — translucent sapphire wearable"
+          src={phoneImg}
+          alt="PAS AI app — a phone displaying personalised health intelligence"
           width={1536}
           height={1536}
           className="h-[80vh] w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)]"
@@ -59,12 +59,12 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground"
         >
-          Aurea — Generation 01 / Now in production
+          PAS AI — Personal health intelligence / Closed beta
         </motion.p>
 
         <div className="self-end text-right md:max-w-2xl">
           <h1 className="font-display display-tight text-[14vw] font-light leading-none md:text-[8vw]">
-            Wear
+            You,
             <br />
             <span className="italic">
               {word.map((c, i) => (
@@ -87,8 +87,9 @@ export function Hero() {
             transition={{ duration: 1, delay: 1.4 }}
             className="mt-8 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground md:ml-auto"
           >
-            A sculpted artifact of sapphire and titanium. Continuous biometric
-            intelligence, sealed inside a 2.4&nbsp;mm shell. No screen. No demands.
+            Connect the wearable you already own. PAS&nbsp;AI listens to your
+            biometrics in the background, learns your personal baseline, and
+            speaks only when something meaningful drifts.
           </motion.p>
         </div>
 
@@ -103,9 +104,9 @@ export function Hero() {
             <span>Scroll to explore</span>
           </div>
           <div className="hidden gap-12 md:flex">
-            <div><div className="text-foreground text-2xl font-display">2.4mm</div><div>profile</div></div>
-            <div><div className="text-foreground text-2xl font-display">9d</div><div>battery</div></div>
-            <div><div className="text-foreground text-2xl font-display">128</div><div>signals/s</div></div>
+            <div><div className="text-foreground text-2xl font-display">14d</div><div>baseline</div></div>
+            <div><div className="text-foreground text-2xl font-display">42</div><div>signals tracked</div></div>
+            <div><div className="text-foreground text-2xl font-display">1:1</div><div>you vs. you</div></div>
           </div>
         </motion.div>
       </div>
