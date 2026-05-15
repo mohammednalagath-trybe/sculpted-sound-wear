@@ -2,14 +2,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 
 const ROWS = [
-  ["Mass", "3.6 g", "lighter than a paperclip"],
-  ["Profile", "2.4 mm", "thinnest production wearable"],
-  ["Battery", "9 days", "solid-state lithium-sulfur"],
-  ["Sensors", "11", "PPG · ECG · SpO₂ · accel · skin temp"],
-  ["Sample rate", "128 Hz", "continuous biometrics"],
-  ["Water", "100 m", "ISO 22810"],
-  ["Materials", "Ti / Al₂O₃", "grade 5 titanium · sapphire"],
-  ["Connectivity", "BLE 5.4", "encrypted on-device"],
+  ["Wearables", "4 platforms", "Apple Watch · Fitbit · Garmin · Oura"],
+  ["Signals", "42 streams", "HRV · RHR · SpO₂ · sleep · temp · load"],
+  ["Baseline", "14 days", "personal model, retrained continuously"],
+  ["Comparison", "1:1", "you, against you — never the population"],
+  ["Latency", "< 60 s", "from wearable sync to verdict"],
+  ["Notifications", "Quiet by default", "only when deviation is meaningful"],
+  ["Storage", "On device", "end-to-end encrypted, you hold the key"],
+  ["Platforms", "iOS · Android", "watchOS & Wear OS companion"],
 ];
 
 export function Specs() {

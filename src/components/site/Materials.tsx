@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import titanium from "@/assets/material-titanium.jpg";
-import exploded from "@/assets/exploded.jpg";
+import devices from "@/assets/devices.jpg";
+import architecture from "@/assets/signal-architecture.jpg";
 
 export function Materials() {
   const ref = useRef<HTMLElement>(null);
@@ -12,16 +12,16 @@ export function Materials() {
   const scaleImg = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
 
   return (
-    <section id="inside" ref={ref} className="relative overflow-hidden py-32 md:py-48">
+    <section id="engine" ref={ref} className="relative overflow-hidden py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="mb-24 max-w-3xl">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-            03 — Materials & engineering
+            03 — Engine & engineering
           </p>
           <h2 className="mt-6 font-display display-tight text-5xl font-light md:text-7xl">
-            Forged from
+            Built on the wearable
             <br />
-            <span className="italic text-amber">aerospace silence.</span>
+            <span className="italic text-amber">already on your wrist.</span>
           </h2>
         </div>
 
@@ -30,27 +30,27 @@ export function Materials() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border">
               <motion.img
                 style={{ scale: scaleImg }}
-                src={titanium}
-                alt="Brushed titanium and sapphire surface"
-                width={1280}
+                src={devices}
+                alt="Apple Watch, Oura ring, Fitbit and Garmin floating in studio light"
+                width={1080}
                 height={1600}
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 font-mono text-[10px] uppercase tracking-[0.3em]">
-                <div className="text-amber">Grade 5 Ti / 6Al-4V</div>
-                <div className="mt-1 text-muted-foreground">density 4.43 g/cm³</div>
+                <div className="text-amber">Apple Watch · Fitbit · Garmin · Oura</div>
+                <div className="mt-1 text-muted-foreground">read-only, encrypted ingest</div>
               </div>
             </div>
           </motion.div>
 
           <motion.div style={{ y: y2 }} className="md:col-span-5 md:pt-32">
             <div className="space-y-16">
-              <Spec n="01" t="Sapphire shell" d="Mohs 9 monocrystalline. Optically transparent to a 940 nm light pulse, opaque to scratches." />
-              <Spec n="02" t="Pico-PCB stack" d="Six layers folded into a 1.1 mm cross-section. Hand-aligned in a Class 100 cleanroom." />
-              <Spec n="03" t="Solid-state cell" d="Lithium-sulfur, no liquid electrolyte. 9-day median life, 1500 cycle warranty." />
-              <Spec n="04" t="Skin contact" d="Hypoallergenic medical-grade DLC coating. Three discrete optical wells, never felt." />
+              <Spec n="01" t="Connect" d="One tap to Apple Health, Fitbit, Garmin Connect, or Oura. Read-only. Nothing about you ever leaves your device unencrypted." />
+              <Spec n="02" t="Learn" d="Fourteen days to map your personal baseline across HRV, resting heart rate, sleep architecture, skin temperature and recovery." />
+              <Spec n="03" t="Compare" d="Every minute, your live signal is measured against the version of you that PAS AI already knows. Not the population. You." />
+              <Spec n="04" t="Speak" d="When deviation crosses a clinically meaningful threshold, you get a single, plain-English notification. Otherwise, silence." />
             </div>
           </motion.div>
         </div>
@@ -58,11 +58,12 @@ export function Materials() {
         <div className="mt-32 grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4 md:pt-12">
             <h3 className="font-display text-3xl font-light md:text-5xl">
-              Twenty-three<br />components.
+              Forty-two<br />signals, one self.
             </h3>
             <p className="mt-6 max-w-sm text-sm text-muted-foreground">
-              Every part — every screw, capacitor, thread — accounted for.
-              Drag the timeline at the bottom of the page to disassemble.
+              HRV, RHR, SpO₂, respiratory rate, skin temperature, sleep stages,
+              VO₂ max, training load — woven into a single longitudinal model
+              of you. The architecture is yours alone.
             </p>
           </div>
           <motion.div
@@ -73,10 +74,10 @@ export function Materials() {
             className="md:col-span-8"
           >
             <img
-              src={exploded}
-              alt="Exploded view of internal components"
+              src={architecture}
+              alt="Signal architecture — biometric streams converging into a personal baseline"
               width={1600}
-              height={1280}
+              height={1080}
               loading="lazy"
               className="w-full rounded-sm border border-border"
             />

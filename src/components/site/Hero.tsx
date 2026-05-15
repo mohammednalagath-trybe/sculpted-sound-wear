@@ -24,7 +24,7 @@ export function Hero() {
     return () => window.removeEventListener("mousemove", onMove);
   }, [mx, my]);
 
-  const word = "intelligence".split("");
+  const word = "decoded".split("");
 
   return (
     <section id="object" ref={ref} className="relative min-h-[110vh] overflow-hidden grain">

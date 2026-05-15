@@ -13,14 +13,14 @@ export function CTA() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-            Now reserving — Generation 01
+            Closed beta — Cohort 01
           </p>
           <h2 className="mx-auto mt-8 max-w-5xl font-display display-tight text-6xl font-light md:text-[10vw]">
-            Hold the
+            Meet the version
             <br />
-            <span className="italic text-amber">future</span>
+            of <span className="italic text-amber">you</span>
             <br />
-            in your hand.
+            you've never met.
           </h2>
 
           <div className="mt-16 flex flex-col items-center justify-center gap-6 md:flex-row">
@@ -36,20 +36,20 @@ export function CTA() {
               className="group relative overflow-hidden rounded-full bg-amber px-12 py-5 text-sm font-medium uppercase tracking-[0.3em] text-amber-foreground"
             >
               <motion.span style={{ x: useTransform(x, (v) => v * 0.5), y: useTransform(y, (v) => v * 0.5) }} className="relative z-10 flex items-center gap-3">
-                Reserve — $499
+                Request access
                 <Arrow />
               </motion.span>
               <span className="absolute inset-0 bg-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </motion.button>
 
             <button className="group flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-muted-foreground transition hover:text-foreground">
-              Read the white paper
+              Read the manifesto
               <Arrow />
             </button>
           </div>
 
           <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-            Ships Q3 2026 · 30-day return · Free worldwide shipping
+            Free during beta · iOS & Android · Your data never leaves your device
           </p>
         </div>
       </div>
