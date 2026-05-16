@@ -9,7 +9,7 @@ export function CTA() {
   const y = useSpring(my, { stiffness: 200, damping: 20 });
 
   return (
-    <section className="relative overflow-hidden py-32 md:py-48">
+    <section id="reserve" className="relative overflow-hidden py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="text-center">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">

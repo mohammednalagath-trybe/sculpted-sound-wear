@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useLenis } from "@/hooks/useLenis";
 import { Nav } from "@/components/site/Nav";
 import { Cursor } from "@/components/site/Cursor";
+import { ScrollPastry } from "@/components/site/ScrollPastry";
 import { Hero } from "@/components/site/Hero";
 import { Marquee } from "@/components/site/Marquee";
 import { SoundViz } from "@/components/site/SoundViz";
@@ -20,6 +21,7 @@ function Index() {
     <main id="top" className="relative bg-background text-foreground">
       <Cursor />
       <Nav />
+      <ScrollPastry />
       <Hero />
       <Marquee />
       <SoundViz />
