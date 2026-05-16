@@ -2,14 +2,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 
 const ROWS = [
-  ["Wearables", "4 platforms", "Apple Watch · Fitbit · Garmin · Oura"],
-  ["Signals", "42 streams", "HRV · RHR · SpO₂ · sleep · temp · load"],
-  ["Baseline", "14 days", "personal model, retrained continuously"],
-  ["Comparison", "1:1", "you, against you — never the population"],
-  ["Latency", "< 60 s", "from wearable sync to verdict"],
-  ["Notifications", "Quiet by default", "only when deviation is meaningful"],
-  ["Storage", "On device", "end-to-end encrypted, you hold the key"],
-  ["Platforms", "iOS · Android", "watchOS & Wear OS companion"],
+  ["Cupcakes", "12 daily", "rose · pistachio · salted caramel · matcha · velvet"],
+  ["Layered cakes", "6 signatures", "ruffle · naked · entremet · mille-crêpe"],
+  ["Macarons", "9 colours", "shells aged 24h · ganache cured 48h"],
+  ["Éclairs", "By the half-dozen", "Madagascar chocolate · Tahitian vanilla · rose"],
+  ["Bespoke", "From 14 days", "weddings · christenings · private orders"],
+  ["Afternoon tea", "Wed–Sun", "three-tier · loose-leaf · Champagne option"],
+  ["Boutiques", "Two", "Belgravia · Marylebone — 8 am to 7 pm"],
+  ["Delivery", "Same-day", "Zone 1 · cream linen box · silk ribbon"],
 ];
 
 export function Specs() {
@@ -18,21 +18,21 @@ export function Specs() {
   const lineWidth = useTransform(scrollYProgress, [0.1, 0.6], ["0%", "100%"]);
 
   return (
-    <section id="specs" ref={ref} className="relative border-t border-border bg-surface py-32 md:py-48">
+    <section id="pastries" ref={ref} className="relative border-t border-border bg-surface py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10">
         <div className="mb-20 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">04 — Specification</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">04 — The menu</p>
             <h2 className="mt-6 font-display display-tight text-5xl font-light md:text-7xl">
-              Every number,
+              A vitrine,
               <br />
-              <span className="italic">earned.</span>
+              <span className="italic">curated daily.</span>
             </h2>
           </div>
         </div>
 
         <div className="relative">
-          <motion.div style={{ width: lineWidth }} className="absolute left-0 top-0 h-px bg-amber" />
+          <motion.div style={{ width: lineWidth }} className="absolute left-0 top-0 h-px bg-rose" />
           {ROWS.map(([k, v, n], i) => (
             <SpecRow key={k} k={k} v={v} n={n} i={i} />
           ))}
@@ -58,7 +58,7 @@ function SpecRow({ k, v, n, i }: { k: string; v: string; n: string; i: number })
         animate={{ scaleX: hover ? 1 : 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         style={{ originX: 0 }}
-        className="absolute inset-x-0 bottom-0 h-px bg-amber"
+        className="absolute inset-x-0 bottom-0 h-px bg-rose"
       />
       <span className="col-span-3 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground md:col-span-2">
         {String(i + 1).padStart(2, "0")} · {k}
