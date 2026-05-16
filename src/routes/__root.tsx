@@ -72,14 +72,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PAS AI — Personal Health Intelligence" },
-      { name: "description", content: "PAS AI turns passive wearable data from Apple Watch, Fitbit and Garmin into personalised health intelligence. It learns your baseline, then alerts you when you deviate from yourself." },
-      { name: "author", content: "PAS AI" },
-      { property: "og:title", content: "PAS AI — You, compared to you." },
-      { property: "og:description", content: "Continuous, personalised health intelligence from the wearable you already own." },
+      { title: "Slice & Smile — Chic London Pâtisserie" },
+      { name: "description", content: "Slice & Smile is a chic London bakery for creative cupcakes, fancy cakes and high-end pastries — hand-piped, hand-finished, delivered same-day across Zone 1." },
+      { name: "author", content: "Slice & Smile" },
+      { property: "og:title", content: "Slice & Smile — Every bite, a smile." },
+      { property: "og:description", content: "Creative cupcakes, fancy cakes and high-end pastries from a chic London pâtisserie in Belgravia & Marylebone." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@pasai" },
+      { name: "twitter:site", content: "@sliceandsmile" },
     ],
     links: [
       {
@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
   }),

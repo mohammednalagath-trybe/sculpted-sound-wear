@@ -27,10 +27,10 @@ export function Cursor() {
       className="pointer-events-none fixed left-0 top-0 z-[100] hidden md:block"
     >
       <motion.div
-        animate={{ scale: hover ? 2.4 : 1, opacity: hover ? 0.9 : 0.6 }}
+        animate={{ scale: hover ? 2.4 : 1, opacity: hover ? 0.9 : 0.7 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        className="-translate-x-1/2 -translate-y-1/2 rounded-full border border-amber"
-        style={{ width: 18, height: 18, mixBlendMode: "difference" }}
+        className="-translate-x-1/2 -translate-y-1/2 rounded-full border border-rose"
+        style={{ width: 18, height: 18 }}
       />
     </motion.div>
   );

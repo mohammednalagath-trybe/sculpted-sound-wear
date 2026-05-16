@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -30,7 +30,10 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-amber: var(--amber);
+  --color-rose: var(--rose);
+  --color-rose-foreground: var(--rose-foreground);
+  --color-gold: var(--gold);
+  --color-cocoa: var(--cocoa);
   --color-glass: var(--glass);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -43,48 +46,45 @@
 :root {
   --radius: 0.25rem;
 
-  /* Sculptural dark palette */
-  --background: oklch(0.12 0.005 60);
-  --foreground: oklch(0.96 0.005 80);
-  --surface: oklch(0.15 0.006 60);
-  --surface-elevated: oklch(0.18 0.008 60);
-  --card: oklch(0.15 0.006 60);
-  --card-foreground: oklch(0.96 0.005 80);
-  --popover: oklch(0.15 0.006 60);
-  --popover-foreground: oklch(0.96 0.005 80);
-  --primary: oklch(0.96 0.005 80);
-  --primary-foreground: oklch(0.12 0.005 60);
-  --secondary: oklch(0.22 0.008 60);
-  --secondary-foreground: oklch(0.96 0.005 80);
-  --muted: oklch(0.20 0.006 60);
-  --muted-foreground: oklch(0.62 0.008 70);
-  --accent: oklch(0.78 0.14 65);
-  --accent-foreground: oklch(0.12 0.005 60);
-  --amber: oklch(0.78 0.14 65);
-  --glass: oklch(1 0 0 / 0.04);
-  --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.96 0.005 80);
-  --border: oklch(1 0 0 / 0.08);
-  --border-strong: oklch(1 0 0 / 0.18);
-  --input: oklch(1 0 0 / 0.10);
-  --ring: oklch(0.78 0.14 65);
+  /* Chic patisserie palette — ivory, blush, cocoa, gold */
+  --background: oklch(0.97 0.012 60);
+  --foreground: oklch(0.22 0.03 30);
+  --surface: oklch(0.94 0.022 25);
+  --surface-elevated: oklch(0.91 0.03 20);
+  --card: oklch(0.97 0.012 60);
+  --card-foreground: oklch(0.22 0.03 30);
+  --popover: oklch(0.97 0.012 60);
+  --popover-foreground: oklch(0.22 0.03 30);
+  --primary: oklch(0.22 0.03 30);
+  --primary-foreground: oklch(0.97 0.012 60);
+  --secondary: oklch(0.88 0.04 20);
+  --secondary-foreground: oklch(0.22 0.03 30);
+  --muted: oklch(0.92 0.018 40);
+  --muted-foreground: oklch(0.45 0.025 30);
+  --accent: oklch(0.82 0.09 20);
+  --accent-foreground: oklch(0.22 0.03 30);
+  --rose: oklch(0.82 0.09 20);
+  --rose-foreground: oklch(0.22 0.03 30);
+  --gold: oklch(0.74 0.12 75);
+  --cocoa: oklch(0.32 0.04 30);
+  --glass: oklch(1 0 0 / 0.55);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.97 0.012 60);
+  --border: oklch(0.22 0.03 30 / 0.12);
+  --border-strong: oklch(0.22 0.03 30 / 0.28);
+  --input: oklch(0.22 0.03 30 / 0.12);
+  --ring: oklch(0.82 0.09 20);
 
-  --gradient-amber: linear-gradient(135deg, oklch(0.82 0.16 70), oklch(0.65 0.18 50));
-  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.78 0.14 65 / 0.35), transparent 70%);
-  --shadow-sculpt: 0 30px 80px -20px oklch(0 0 0 / 0.6), 0 0 120px oklch(0.78 0.14 65 / 0.08);
-  --shadow-glow: 0 0 60px oklch(0.78 0.14 65 / 0.4);
+  --gradient-rose: linear-gradient(135deg, oklch(0.88 0.07 20), oklch(0.78 0.12 15));
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 80), oklch(0.68 0.13 60));
+  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.82 0.09 20 / 0.45), transparent 70%);
+  --shadow-sculpt: 0 30px 80px -20px oklch(0.4 0.08 20 / 0.25), 0 0 120px oklch(0.82 0.09 20 / 0.15);
+  --shadow-glow: 0 0 60px oklch(0.82 0.09 20 / 0.4);
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  html {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-
+  * { border-color: var(--color-border); }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -92,58 +92,43 @@
     font-feature-settings: "ss01", "cv11";
     overflow-x: hidden;
   }
-
-  ::selection {
-    background: var(--amber);
-    color: var(--primary-foreground);
-  }
-
+  ::selection { background: var(--rose); color: var(--rose-foreground); }
   ::-webkit-scrollbar { width: 0; height: 0; }
 }
 
 @layer utilities {
   .font-display { font-family: var(--font-display); font-optical-sizing: auto; }
   .font-mono { font-family: var(--font-mono); }
-
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 
-  .grain {
-    position: relative;
-  }
+  .grain { position: relative; }
   .grain::after {
     content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.06;
-    mix-blend-mode: overlay;
+    position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.05; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   .glass {
     background: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--border);
   }
 
-  .text-amber-glow {
-    color: var(--amber);
-    text-shadow: 0 0 30px oklch(0.78 0.14 65 / 0.5);
+  .text-gold-glow {
+    color: var(--gold);
+    text-shadow: 0 0 30px oklch(0.74 0.12 75 / 0.4);
   }
 
-  .display-tight {
-    letter-spacing: -0.04em;
-    line-height: 0.92;
-  }
+  .display-tight { letter-spacing: -0.02em; line-height: 0.92; }
 
   .marquee-mask {
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 }
 
-/* Lenis */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
