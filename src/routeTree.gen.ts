@@ -9,38 +9,244 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WireframesRouteImport } from './routes/wireframes'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppUpdatesRouteImport } from './routes/app.updates'
+import { Route as AppTeamsRouteImport } from './routes/app.teams'
+import { Route as AppReferralsRouteImport } from './routes/app.referrals'
+import { Route as AppProjectsRouteImport } from './routes/app.projects'
+import { Route as AppNewsRouteImport } from './routes/app.news'
+import { Route as AppMediaRouteImport } from './routes/app.media'
+import { Route as AppEventsRouteImport } from './routes/app.events'
+import { Route as AppDocumentsRouteImport } from './routes/app.documents'
+import { Route as AppCalendarRouteImport } from './routes/app.calendar'
+import { Route as AppProfileIdRouteImport } from './routes/app.profile.$id'
+import { Route as AppEventsEventIdRouteImport } from './routes/app.events.$eventId'
 
+const WireframesRoute = WireframesRouteImport.update({
+  id: '/wireframes',
+  path: '/wireframes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppUpdatesRoute = AppUpdatesRouteImport.update({
+  id: '/updates',
+  path: '/updates',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTeamsRoute = AppTeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReferralsRoute = AppReferralsRouteImport.update({
+  id: '/referrals',
+  path: '/referrals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsRoute = AppProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNewsRoute = AppNewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMediaRoute = AppMediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEventsRoute = AppEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppDocumentsRoute = AppDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCalendarRoute = AppCalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProfileIdRoute = AppProfileIdRouteImport.update({
+  id: '/profile/$id',
+  path: '/profile/$id',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEventsEventIdRoute = AppEventsEventIdRouteImport.update({
+  id: '/$eventId',
+  path: '/$eventId',
+  getParentRoute: () => AppEventsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/login': typeof LoginRoute
+  '/wireframes': typeof WireframesRoute
+  '/app/calendar': typeof AppCalendarRoute
+  '/app/documents': typeof AppDocumentsRoute
+  '/app/events': typeof AppEventsRouteWithChildren
+  '/app/media': typeof AppMediaRoute
+  '/app/news': typeof AppNewsRoute
+  '/app/projects': typeof AppProjectsRoute
+  '/app/referrals': typeof AppReferralsRoute
+  '/app/teams': typeof AppTeamsRoute
+  '/app/updates': typeof AppUpdatesRoute
+  '/app/': typeof AppIndexRoute
+  '/app/events/$eventId': typeof AppEventsEventIdRoute
+  '/app/profile/$id': typeof AppProfileIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/wireframes': typeof WireframesRoute
+  '/app/calendar': typeof AppCalendarRoute
+  '/app/documents': typeof AppDocumentsRoute
+  '/app/events': typeof AppEventsRouteWithChildren
+  '/app/media': typeof AppMediaRoute
+  '/app/news': typeof AppNewsRoute
+  '/app/projects': typeof AppProjectsRoute
+  '/app/referrals': typeof AppReferralsRoute
+  '/app/teams': typeof AppTeamsRoute
+  '/app/updates': typeof AppUpdatesRoute
+  '/app': typeof AppIndexRoute
+  '/app/events/$eventId': typeof AppEventsEventIdRoute
+  '/app/profile/$id': typeof AppProfileIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/login': typeof LoginRoute
+  '/wireframes': typeof WireframesRoute
+  '/app/calendar': typeof AppCalendarRoute
+  '/app/documents': typeof AppDocumentsRoute
+  '/app/events': typeof AppEventsRouteWithChildren
+  '/app/media': typeof AppMediaRoute
+  '/app/news': typeof AppNewsRoute
+  '/app/projects': typeof AppProjectsRoute
+  '/app/referrals': typeof AppReferralsRoute
+  '/app/teams': typeof AppTeamsRoute
+  '/app/updates': typeof AppUpdatesRoute
+  '/app/': typeof AppIndexRoute
+  '/app/events/$eventId': typeof AppEventsEventIdRoute
+  '/app/profile/$id': typeof AppProfileIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/login'
+    | '/wireframes'
+    | '/app/calendar'
+    | '/app/documents'
+    | '/app/events'
+    | '/app/media'
+    | '/app/news'
+    | '/app/projects'
+    | '/app/referrals'
+    | '/app/teams'
+    | '/app/updates'
+    | '/app/'
+    | '/app/events/$eventId'
+    | '/app/profile/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/login'
+    | '/wireframes'
+    | '/app/calendar'
+    | '/app/documents'
+    | '/app/events'
+    | '/app/media'
+    | '/app/news'
+    | '/app/projects'
+    | '/app/referrals'
+    | '/app/teams'
+    | '/app/updates'
+    | '/app'
+    | '/app/events/$eventId'
+    | '/app/profile/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/login'
+    | '/wireframes'
+    | '/app/calendar'
+    | '/app/documents'
+    | '/app/events'
+    | '/app/media'
+    | '/app/news'
+    | '/app/projects'
+    | '/app/referrals'
+    | '/app/teams'
+    | '/app/updates'
+    | '/app/'
+    | '/app/events/$eventId'
+    | '/app/profile/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  LoginRoute: typeof LoginRoute
+  WireframesRoute: typeof WireframesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wireframes': {
+      id: '/wireframes'
+      path: '/wireframes'
+      fullPath: '/wireframes'
+      preLoaderRoute: typeof WireframesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +254,141 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/updates': {
+      id: '/app/updates'
+      path: '/updates'
+      fullPath: '/app/updates'
+      preLoaderRoute: typeof AppUpdatesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/teams': {
+      id: '/app/teams'
+      path: '/teams'
+      fullPath: '/app/teams'
+      preLoaderRoute: typeof AppTeamsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/referrals': {
+      id: '/app/referrals'
+      path: '/referrals'
+      fullPath: '/app/referrals'
+      preLoaderRoute: typeof AppReferralsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/projects': {
+      id: '/app/projects'
+      path: '/projects'
+      fullPath: '/app/projects'
+      preLoaderRoute: typeof AppProjectsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/news': {
+      id: '/app/news'
+      path: '/news'
+      fullPath: '/app/news'
+      preLoaderRoute: typeof AppNewsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/media': {
+      id: '/app/media'
+      path: '/media'
+      fullPath: '/app/media'
+      preLoaderRoute: typeof AppMediaRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/events': {
+      id: '/app/events'
+      path: '/events'
+      fullPath: '/app/events'
+      preLoaderRoute: typeof AppEventsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/documents': {
+      id: '/app/documents'
+      path: '/documents'
+      fullPath: '/app/documents'
+      preLoaderRoute: typeof AppDocumentsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/calendar': {
+      id: '/app/calendar'
+      path: '/calendar'
+      fullPath: '/app/calendar'
+      preLoaderRoute: typeof AppCalendarRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/profile/$id': {
+      id: '/app/profile/$id'
+      path: '/profile/$id'
+      fullPath: '/app/profile/$id'
+      preLoaderRoute: typeof AppProfileIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/events/$eventId': {
+      id: '/app/events/$eventId'
+      path: '/$eventId'
+      fullPath: '/app/events/$eventId'
+      preLoaderRoute: typeof AppEventsEventIdRouteImport
+      parentRoute: typeof AppEventsRoute
+    }
   }
 }
 
+interface AppEventsRouteChildren {
+  AppEventsEventIdRoute: typeof AppEventsEventIdRoute
+}
+
+const AppEventsRouteChildren: AppEventsRouteChildren = {
+  AppEventsEventIdRoute: AppEventsEventIdRoute,
+}
+
+const AppEventsRouteWithChildren = AppEventsRoute._addFileChildren(
+  AppEventsRouteChildren,
+)
+
+interface AppRouteChildren {
+  AppCalendarRoute: typeof AppCalendarRoute
+  AppDocumentsRoute: typeof AppDocumentsRoute
+  AppEventsRoute: typeof AppEventsRouteWithChildren
+  AppMediaRoute: typeof AppMediaRoute
+  AppNewsRoute: typeof AppNewsRoute
+  AppProjectsRoute: typeof AppProjectsRoute
+  AppReferralsRoute: typeof AppReferralsRoute
+  AppTeamsRoute: typeof AppTeamsRoute
+  AppUpdatesRoute: typeof AppUpdatesRoute
+  AppIndexRoute: typeof AppIndexRoute
+  AppProfileIdRoute: typeof AppProfileIdRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppCalendarRoute: AppCalendarRoute,
+  AppDocumentsRoute: AppDocumentsRoute,
+  AppEventsRoute: AppEventsRouteWithChildren,
+  AppMediaRoute: AppMediaRoute,
+  AppNewsRoute: AppNewsRoute,
+  AppProjectsRoute: AppProjectsRoute,
+  AppReferralsRoute: AppReferralsRoute,
+  AppTeamsRoute: AppTeamsRoute,
+  AppUpdatesRoute: AppUpdatesRoute,
+  AppIndexRoute: AppIndexRoute,
+  AppProfileIdRoute: AppProfileIdRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
+  LoginRoute: LoginRoute,
+  WireframesRoute: WireframesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SessionProvider } from "@/lib/session";
 
 function NotFoundComponent() {
   return (
@@ -72,14 +73,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Slice & Smile — Chic London Pâtisserie" },
-      { name: "description", content: "Slice & Smile is a chic London bakery for creative cupcakes, fancy cakes and high-end pastries — hand-piped, hand-finished, delivered same-day across Zone 1." },
-      { name: "author", content: "Slice & Smile" },
-      { property: "og:title", content: "Slice & Smile — Every bite, a smile." },
-      { property: "og:description", content: "Creative cupcakes, fancy cakes and high-end pastries from a chic London pâtisserie in Belgravia & Marylebone." },
+      { title: "Apex — Team Leadership Platform" },
+      { name: "description", content: "Apex is a sculpted leadership platform for managing teams, ranks, business values, referrals and events — built for high-performing leaders." },
+      { name: "author", content: "Apex" },
+      { property: "og:title", content: "Apex — Lead the room." },
+      { property: "og:description", content: "A sculpted leadership platform for ranks, business value, referrals and events." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@sliceandsmile" },
+      { name: "twitter:site", content: "@apex" },
     ],
     links: [
       {
@@ -119,7 +120,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <SessionProvider>
+        <Outlet />
+      </SessionProvider>
     </QueryClientProvider>
   );
 }
