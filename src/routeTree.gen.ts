@@ -11,7 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WireframesRouteImport } from './routes/wireframes'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppTeamsRouteImport } from './routes/app.teams'
+import { Route as AppReferralsRouteImport } from './routes/app.referrals'
+import { Route as AppCalendarRouteImport } from './routes/app.calendar'
+import { Route as AppProfileIdRouteImport } from './routes/app.profile.$id'
 
 const WireframesRoute = WireframesRouteImport.update({
   id: '/wireframes',
@@ -23,38 +29,113 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTeamsRoute = AppTeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReferralsRoute = AppReferralsRouteImport.update({
+  id: '/referrals',
+  path: '/referrals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCalendarRoute = AppCalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProfileIdRoute = AppProfileIdRouteImport.update({
+  id: '/profile/$id',
+  path: '/profile/$id',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/wireframes': typeof WireframesRoute
+  '/app/calendar': typeof AppCalendarRoute
+  '/app/referrals': typeof AppReferralsRoute
+  '/app/teams': typeof AppTeamsRoute
+  '/app/': typeof AppIndexRoute
+  '/app/profile/$id': typeof AppProfileIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/wireframes': typeof WireframesRoute
+  '/app/calendar': typeof AppCalendarRoute
+  '/app/referrals': typeof AppReferralsRoute
+  '/app/teams': typeof AppTeamsRoute
+  '/app': typeof AppIndexRoute
+  '/app/profile/$id': typeof AppProfileIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/wireframes': typeof WireframesRoute
+  '/app/calendar': typeof AppCalendarRoute
+  '/app/referrals': typeof AppReferralsRoute
+  '/app/teams': typeof AppTeamsRoute
+  '/app/': typeof AppIndexRoute
+  '/app/profile/$id': typeof AppProfileIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/wireframes'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/login'
+    | '/wireframes'
+    | '/app/calendar'
+    | '/app/referrals'
+    | '/app/teams'
+    | '/app/'
+    | '/app/profile/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/wireframes'
-  id: '__root__' | '/' | '/login' | '/wireframes'
+  to:
+    | '/'
+    | '/login'
+    | '/wireframes'
+    | '/app/calendar'
+    | '/app/referrals'
+    | '/app/teams'
+    | '/app'
+    | '/app/profile/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/login'
+    | '/wireframes'
+    | '/app/calendar'
+    | '/app/referrals'
+    | '/app/teams'
+    | '/app/'
+    | '/app/profile/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
   LoginRoute: typeof LoginRoute
   WireframesRoute: typeof WireframesRoute
 }
@@ -75,6 +156,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -82,11 +170,65 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/teams': {
+      id: '/app/teams'
+      path: '/teams'
+      fullPath: '/app/teams'
+      preLoaderRoute: typeof AppTeamsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/referrals': {
+      id: '/app/referrals'
+      path: '/referrals'
+      fullPath: '/app/referrals'
+      preLoaderRoute: typeof AppReferralsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/calendar': {
+      id: '/app/calendar'
+      path: '/calendar'
+      fullPath: '/app/calendar'
+      preLoaderRoute: typeof AppCalendarRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/profile/$id': {
+      id: '/app/profile/$id'
+      path: '/profile/$id'
+      fullPath: '/app/profile/$id'
+      preLoaderRoute: typeof AppProfileIdRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppCalendarRoute: typeof AppCalendarRoute
+  AppReferralsRoute: typeof AppReferralsRoute
+  AppTeamsRoute: typeof AppTeamsRoute
+  AppIndexRoute: typeof AppIndexRoute
+  AppProfileIdRoute: typeof AppProfileIdRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppCalendarRoute: AppCalendarRoute,
+  AppReferralsRoute: AppReferralsRoute,
+  AppTeamsRoute: AppTeamsRoute,
+  AppIndexRoute: AppIndexRoute,
+  AppProfileIdRoute: AppProfileIdRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
   LoginRoute: LoginRoute,
   WireframesRoute: WireframesRoute,
 }
