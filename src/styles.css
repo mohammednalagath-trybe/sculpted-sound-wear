@@ -46,40 +46,40 @@
 :root {
   --radius: 0.25rem;
 
-  /* Leadership platform — porcelain white + deep cobalt + coffee accents */
-  --background: oklch(0.985 0.004 240);          /* near-white, hint of cool */
-  --foreground: oklch(0.22 0.04 255);            /* deep navy ink */
-  --surface: oklch(0.97 0.008 240);
-  --surface-elevated: oklch(1 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.04 255);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.04 255);
-  --primary: oklch(0.42 0.16 258);               /* deep cobalt blue */
-  --primary-foreground: oklch(0.99 0.002 240);
-  --secondary: oklch(0.94 0.012 240);
-  --secondary-foreground: oklch(0.28 0.05 258);
-  --muted: oklch(0.95 0.008 240);
-  --muted-foreground: oklch(0.48 0.025 255);
-  --accent: oklch(0.42 0.07 55);                 /* coffee brown */
-  --accent-foreground: oklch(0.99 0.002 240);
-  --rose: oklch(0.55 0.10 50);                   /* mocha alt */
-  --rose-foreground: oklch(0.99 0.002 240);
-  --gold: oklch(0.58 0.09 60);                   /* warm caramel accent */
-  --cocoa: oklch(0.32 0.055 50);                 /* dark coffee */
-  --glass: oklch(0.42 0.16 258 / 0.04);
-  --destructive: oklch(0.58 0.22 27);
-  --destructive-foreground: oklch(0.99 0.002 240);
-  --border: oklch(0.22 0.04 255 / 0.10);
-  --border-strong: oklch(0.42 0.16 258 / 0.28);
-  --input: oklch(0.22 0.04 255 / 0.08);
-  --ring: oklch(0.42 0.16 258);
+  /* Leadership platform — warm cream + deep evergreen + burnished copper */
+  --background: oklch(0.97 0.012 90);            /* warm cream */
+  --foreground: oklch(0.22 0.04 155);            /* deep forest ink */
+  --surface: oklch(0.94 0.014 90);
+  --surface-elevated: oklch(0.99 0.006 90);
+  --card: oklch(0.99 0.006 90);
+  --card-foreground: oklch(0.22 0.04 155);
+  --popover: oklch(0.99 0.006 90);
+  --popover-foreground: oklch(0.22 0.04 155);
+  --primary: oklch(0.34 0.07 155);               /* deep evergreen */
+  --primary-foreground: oklch(0.97 0.012 90);
+  --secondary: oklch(0.92 0.018 95);
+  --secondary-foreground: oklch(0.28 0.05 155);
+  --muted: oklch(0.93 0.012 90);
+  --muted-foreground: oklch(0.46 0.025 140);
+  --accent: oklch(0.55 0.13 45);                 /* burnished copper */
+  --accent-foreground: oklch(0.98 0.008 90);
+  --rose: oklch(0.55 0.13 45);
+  --rose-foreground: oklch(0.98 0.008 90);
+  --gold: oklch(0.62 0.12 65);                   /* aged brass */
+  --cocoa: oklch(0.32 0.06 50);
+  --glass: oklch(0.34 0.07 155 / 0.05);
+  --destructive: oklch(0.55 0.20 27);
+  --destructive-foreground: oklch(0.98 0.008 90);
+  --border: oklch(0.22 0.04 155 / 0.12);
+  --border-strong: oklch(0.34 0.07 155 / 0.30);
+  --input: oklch(0.22 0.04 155 / 0.08);
+  --ring: oklch(0.55 0.13 45);
 
-  --gradient-rose: linear-gradient(135deg, oklch(0.45 0.09 55), oklch(0.32 0.055 50));
-  --gradient-gold: linear-gradient(135deg, oklch(0.62 0.10 65), oklch(0.42 0.07 45));
-  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.42 0.16 258 / 0.18), transparent 70%);
-  --shadow-sculpt: 0 30px 80px -28px oklch(0.22 0.04 255 / 0.25), 0 0 0 1px oklch(0.22 0.04 255 / 0.04);
-  --shadow-glow: 0 0 60px oklch(0.42 0.16 258 / 0.25);
+  --gradient-rose: linear-gradient(135deg, oklch(0.58 0.14 45), oklch(0.40 0.10 40));
+  --gradient-gold: linear-gradient(135deg, oklch(0.66 0.13 70), oklch(0.46 0.10 50));
+  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.55 0.13 45 / 0.18), transparent 70%);
+  --shadow-sculpt: 0 30px 80px -28px oklch(0.22 0.04 155 / 0.28), 0 0 0 1px oklch(0.22 0.04 155 / 0.05);
+  --shadow-glow: 0 0 60px oklch(0.55 0.13 45 / 0.30);
 }
 
 @layer base {
